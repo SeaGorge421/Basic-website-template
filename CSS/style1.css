@@ -1,0 +1,212 @@
+/* External CSS styles */
+:root {
+    /* Declare light dark variables */
+    --bg-color-light: #f4f4f4;
+    --text-color-light: #333;
+    --bg-color-dark: #333;
+    --text-color-dark: #f4f4f4;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color-light); /* Set the background color for the body */
+}
+.dark-mode .container {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    /* Adjust other styles for dark mode if needed */
+}
+.dark-mode main{
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+.dark-mode body{
+    background-color: var(--bg-color-dark);
+}
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: var(--bg-color-light); /* Change this background color to your desired color */
+    margin: 5px auto;
+    transition: all 2s ease-in-out;
+    color: var(--text-color-light); /* If necessary, use color property */
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bg-color-light); /* Set the background color for the container */
+}
+h1 {
+    margin: 0;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Stretch items vertically to fill available space */
+}
+main {
+    background-color: var(--bg-color-light);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.menu {
+    display: none;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.menu.is-active {
+    display: block;
+}
+header {
+    background-color: #171717;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the header stays on top of other content */
+    
+}
+
+footer {
+    background-color: #171717;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+nav a {
+    color: #fff; /* Set link color */
+    text-decoration: none; /* Remove underlines */
+    padding: 10px 20px; /* Add padding for better spacing */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: flex;
+    align-items: center; /* Center link content vertically */
+    height: 100%; /* Set height to 100% to fill available vertical space */
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.333); /* Add background color on hover */
+    font-weight: bolder;
+}
+nav a:active{
+    background-color: rgba(255, 255, 255, 0.666);
+}
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    border: 1px, solid, white;
+}
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+  /* The slider */
+.slider {
+    --background: #fff;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+    
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+    background: var(--background);
+    transition: .5s;
+}
+input:checked + .slider {
+    background-color: #fff;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+  }
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+    .menu.is-active {
+        display: block;
+    }
+    .menu-toggle input {
+        display: none;
+    }
+    .menu-toggle span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: #fff;
+        margin: 5px auto;
+        transition: all 2s ease-in-out;
+    }
+    .menu-toggle input:checked ~ .menu {
+        display: block;
+    }
+    .menu-toggle input:checked ~ span:nth-of-type(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-toggle input:checked ~ span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .menu-toggle input:checked ~ span:nth-of-type(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
