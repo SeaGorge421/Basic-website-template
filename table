@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Webpage Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers/dist/hamburgers.min.css"> <!-- Hamburgers CSS -->
+    <link rel="stylesheet" href="CSS/style1.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+<header>
+    <h1>Modern Webpage</h1>
+    <div class="hamburger hamburger--collapse">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><label class="switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+            </label></li>
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="table.html">Table</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+<main>
+   <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>123-456-7890</td>
+        </tr>
+        <tr>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>987-654-3210</td>
+        </tr>
+        <tr>
+            <td>Michael Johnson</td>
+            <td>michael@example.com</td>
+            <td>456-789-0123</td>
+        </tr>
+    </tbody>
+</table>
+</main>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Modern Webpage Example</p>
+</footer>
+
+<!-- jQuery (necessary for Hamburgers JavaScript) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Hamburgers JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/hamburgers/dist/hamburgers.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.hamburger').click(function () {
+            $(this).toggleClass('is-active');
+            $('.menu').toggleClass('is-active');
+        });
+    });
+</script>
+<script>
+  const darkModeToggle = document.getElementById('mode-toggle'); // Corrected ID
+const body = document.body;
+
+// Function to set initial mode based on checkbox state
+function setInitialMode() {
+    body.classList.toggle('dark-mode', darkModeToggle.checked);
+}
+
+// Call the function to set initial mode
+setInitialMode();
+
+// Listen for changes in checkbox state
+darkModeToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode', darkModeToggle.checked);
+});
+</script>
+</body>
+</html>
