@@ -75,37 +75,21 @@
     });
 </script>
 <script>
-    const darkModeToggle = document.getElementById('mode-toggle');
+    const darkModeToggle = document.getElementById('mode-toggle'); // Corrected ID
+const body = document.body;
 
-    const body = document.body;
+// Function to set initial mode based on checkbox state
+function setInitialMode() {
+    body.classList.toggle('dark-mode', darkModeToggle.checked);
+}
 
-    // Function to set theme based on user preference
-    function setThemePreference() {
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            darkModeToggle.checked = true;
-        } else {
-            body.classList.remove('dark-mode');
-            darkModeToggle.checked = false;
-        }
-    }
+// Call the function to set initial mode
+setInitialMode();
 
-    // Call the function to set initial theme preference
-    setThemePreference();
-
-    // Listen for changes in checkbox state
-    darkModeToggle.addEventListener('change', () => {
-        if (darkModeToggle.checked) {
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        }
-    });
+// Listen for changes in checkbox state
+darkModeToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode', darkModeToggle.checked);
 });
-
 </script>
 </body>
 </html>
-Show quoted text
