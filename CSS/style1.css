@@ -1,78 +1,102 @@
 /* External CSS styles */
-:root {
-    /* Declare light dark variables */
-    --bg-color-light: #f4f4f4;
-    --text-color-light: #333;
-    --bg-color-dark: #333;
-    --text-color-dark: #f4f4f4;
-}
+
+/* Set global styles for the body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color-light); /* Set the background color for the body */
+    background-color: #f4f4f4; /* Set the background color for the body */
 }
+
+/* Dark mode styles for container */
 .dark-mode .container {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
+    background-color: #404040;
+    color: #f4f4f4;
     /* Adjust other styles for dark mode if needed */
 }
+
+/* Dark mode styles for main */
 .dark-mode main{
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
+    background-color: #333;
+    color: #f4f4f4;
 }
+
+/* Dark mode styles for body */
 .dark-mode body{
-    background-color: var(--bg-color-dark);
+    background-color: #333;
 }
+
+/* Styles for menu toggle */
 .menu-toggle span {
     display: block;
     width: 30px;
     height: 5px;
-    background: var(--bg-color-light); /* Change this background color to your desired color */
+    background: #f4f4f4; /* Change this background color to your desired color */
     margin: 5px auto;
     transition: all 2s ease-in-out;
-    color: var(--text-color-light); /* If necessary, use color property */
+    color: #333; /* If necessary, use color property */
 }
+
+/* Styles for container */
 .container {
-    max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--bg-color-light); /* Set the background color for the container */
+    background-color: #f4f4f4; /* Set the background color for the container */
 }
+
+/* Styles for heading */
 h1 {
     margin: 0;
 }
+
+/* Styles for navigation */
 nav {
     display: flex;
     justify-content: center;
     align-items: stretch; /* Stretch items vertically to fill available space */
 }
+
+/* Styles for main content */
 main {
-    background-color: var(--bg-color-light);
+    background-color: #f4f4f4;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    max-width: 960px;
+    margin: 0 auto;
 }
+
+/* Styles for menu */
 .menu {
     display: none;
 }
+
+/* Styles for menu list */
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
+/* Styles for menu list items */
 .menu ul li {
     display: inline-block;
     margin-right: 20px;
 }
+
+/* Styles for menu links */
 .menu ul li a {
     color: #fff;
     text-decoration: none;
 }
+
+/* Styles for active menu */
 .menu.is-active {
     display: block;
 }
+
+/* Styles for header */
 header {
     background-color: #171717;
     color: #fff;
@@ -83,9 +107,9 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensure the header stays on top of other content */
-    
 }
 
+/* Styles for footer */
 footer {
     background-color: #171717;
     color: #fff;
@@ -94,6 +118,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Styles for navigation links */
 nav a {
     color: #fff; /* Set link color */
     text-decoration: none; /* Remove underlines */
@@ -105,14 +131,18 @@ nav a {
     border-radius: 5px;
 }
 
+/* Styles for navigation links on hover */
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.333); /* Add background color on hover */
     font-weight: bolder;
 }
+
+/* Styles for navigation links on active state */
 nav a:active{
     background-color: rgba(255, 255, 255, 0.666);
 }
-/* The switch - the box around the slider */
+
+/* Styles for the switch - the box around the slider */
 .switch {
     font-size: 17px;
     position: relative;
@@ -121,28 +151,28 @@ nav a:active{
     height: 2em;
     border: 1px, solid, white;
 }
-  /* Hide default HTML checkbox */
+
+/* Hide default HTML checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-
-  /* The slider */
+/* Styles for the slider */
 .slider {
-    --background: #fff;
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--background);
+    background-color: #fff;
     transition: .5s;
     border-radius: 30px;
-    
 }
+
+/* Styles for the slider before */
 .slider:before {
     position: absolute;
     content: "";
@@ -155,14 +185,17 @@ nav a:active{
     background: var(--background);
     transition: .5s;
 }
+
+/* Styles for the slider when checked */
 input:checked + .slider {
     background-color: #fff;
-  }
-  
-  input:checked + .slider:before {
+}
+
+/* Styles for the slider before when checked */
+input:checked + .slider:before {
     transform: translateX(100%);
     box-shadow: inset 8px -4px 0px 0px #fff000;
-  }
+}
 
 /* Media queries for responsive design */
 @media only screen and (max-width: 768px) {
