@@ -1,4 +1,5 @@
 var Cookies;
+/*
 document.addEventListener('DOMContentLoaded', function () {
     var cookiePopup = document.getElementById('cookie-consent-popup');
     var acceptCookiesBtn = document.getElementById('accept-cookies');
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
     }
 });
-
+*/
 
 
 $(document).ready(function () {
