@@ -182,13 +182,13 @@ nav a:active{
     left: 10%;
     bottom: 15%;
     box-shadow: inset 15px -4px 0px 15px #fff000;
-    background: var(--background);
+    background: #2c2c2c;
     transition: .5s;
 }
 
 /* Styles for the slider when checked */
 input:checked + .slider {
-    background-color: #fff;
+    background-color: #2c2c2c;
 }
  
 /* Styles for the slider before when checked */
