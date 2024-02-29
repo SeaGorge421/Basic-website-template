@@ -1,3 +1,35 @@
+var Cookies;
+document.addEventListener('DOMContentLoaded', function () {
+    var cookiePopup = document.getElementById('cookie-popup');
+    var acceptCookiesBtn = document.getElementById('accept-cookies');
+    var declineCookiesBtn = document.getElementById('decline-cookies');
+
+    acceptCookiesBtn.addEventListener('click', function () {
+        // Hide the cookie popup when the "Accept Cookies" button is clicked
+        cookiePopup.style.display = 'none';
+        // Set a cookie to remember the user's choice to accept cookies
+        document.cookie = 'cookies_accepted=true; max-age=' + (365 * 24 * 60 * 60); // Expires in 1 year
+        Cookies = true;
+    });
+
+    declineCookiesBtn.addEventListener('click', function () {
+        // Hide the cookie popup when the "Decline Cookies" button is clicked
+        cookiePopup.style.display = 'none';
+        // Set a cookie to remember the user's choice to decline cookies
+        document.cookie = 'cookies_accepted=false; max-age=' + (365 * 24 * 60 * 60); // Expires in 1 year
+        Cookies = false;
+    });
+
+    // Check if the user has already accepted or declined cookies
+    if (document.cookie.indexOf('cookies_accepted=true') === -1 && document.cookie.indexOf('cookies_accepted=false') === -1) {
+        // If not, show the cookie popup
+        cookiePopup.style.display = 'block';
+        Cookies = true;
+    }
+});
+
+
+
 $(document).ready(function () {
     $('.hamburger').click(function () {
         $(this).toggleClass('is-active');
@@ -12,49 +44,6 @@ function setCookie(name, value, days) {
     document.cookie = name + '=' + value + ';expires=' + expires.toUTCString();
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Check if cookies are accepted
-    const acceptedCookies = localStorage.getItem("acceptedCookies");
-
-    if (!acceptedCookies) {
-        // Run this code if cookies are not accepted
-        // Add your code here
-        document.addEventListener("DOMContentLoaded", function() {
-            const cookiePopup = document.getElementById("cookie-consent-popup");
-            const acceptBtn = document.getElementById("accept-cookies-btn");
-            const rejectBtn = document.getElementById("reject-cookies-btn");
-        
-            // Check if user has already accepted cookies
-            const acceptedCookies = localStorage.getItem("acceptedCookies");
-        
-            if (!acceptedCookies) {
-                cookiePopup.style.display = "block";
-            }
-        
-            // Event listener for accept button
-            acceptBtn.addEventListener("click", function() {
-                localStorage.setItem("acceptedCookies", true);
-                cookiePopup.style.display = "none";
-            });
-        
-            // Event listener for reject button
-            rejectBtn.addEventListener("click", function() {
-                // You may want to handle rejection behavior here, such as blocking certain features
-                localStorage.removeItem("acceptedCookies");
-                cookiePopup.style.display = "none";
-            });
-        });
-        
-        // For example:
-        console.log("Cookies are not accepted. Running code...");
-    } else {
-        // Run this code if cookies are accepted
-        // Add your other code here
-        
-        // For example:
-        console.log("Cookies are accepted. Running other code...");
-    }
-});
 
 // Function to get a cookie value
 function getCookie(name) {
@@ -77,11 +66,20 @@ if (darkModeCookie && darkModeCookie === 'true') {
 
 // Toggle mode when the checkbox is clicked
 document.getElementById('mode-toggle').addEventListener('change', function() {
-    if (this.checked) {
-        document.body.classList.add('dark-mode');
-        setCookie('darkMode', 'true', 30); // Set cookie to expire in 30 days
-    } else {
-        document.body.classList.remove('dark-mode');
-        setCookie('darkMode', 'false', 30); // Set cookie to expire in 30 days
+    if(Cookies == true){
+        if (this.checked) {
+            document.body.classList.add('dark-mode');
+            setCookie('darkMode', 'true', 30); // Set cookie to expire in 30 days
+        } else {
+            document.body.classList.remove('dark-mode');
+            setCookie('darkMode', 'false', 30); // Set cookie to expire in 30 days
+        }
+    }
+    else{
+        if (this.checked) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
     }
 });
