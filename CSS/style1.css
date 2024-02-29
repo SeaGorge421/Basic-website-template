@@ -242,7 +242,7 @@ input:checked + .slider:before {
         .dark-mode tr:hover {
             background-color: #222222;
         }
-        .cookie-popup {
+        .cookie-consent-popup {
             position: fixed;
             bottom: 20px;
             left: 20px;
@@ -254,17 +254,17 @@ input:checked + .slider:before {
             z-index: 1000;
         }
         
-        .cookie-popup p {
+        .cookie-consent-popup p {
             margin: 0;
             font-size: 14px;
         }
         
-        .cookie-popup a {
+        .cookie-consent-popup a {
             color: blue;
             text-decoration: underline;
         }
         
-        .cookie-popup button {
+        .cookie-consent-popup button {
             background-color: #007bff;
             color: #fff;
             border: none;
