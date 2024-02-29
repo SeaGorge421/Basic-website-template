@@ -237,30 +237,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Hamburgers JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/hamburgers/dist/hamburgers.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.hamburger').click(function () {
-            $(this).toggleClass('is-active');
-            $('.menu').toggleClass('is-active');
-        });
-    });
-</script>
-<script>
-  const darkModeToggle = document.getElementById('mode-toggle'); // Corrected ID
-const body = document.body;
-
-// Function to set initial mode based on checkbox state
-function setInitialMode() {
-    body.classList.toggle('dark-mode', darkModeToggle.checked);
-}
-
-// Call the function to set initial mode
-setInitialMode();
-
-// Listen for changes in checkbox state
-darkModeToggle.addEventListener('change', () => {
-    body.classList.toggle('dark-mode', darkModeToggle.checked);
-});
-</script>
+<script src="SCRIPT/BackgrounScript.js"></script>
 </body>
 </html>
