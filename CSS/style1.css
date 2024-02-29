@@ -190,7 +190,7 @@ nav a:active{
 input:checked + .slider {
     background-color: #fff;
 }
-
+ 
 /* Styles for the slider before when checked */
 input:checked + .slider:before {
     transform: translateX(100%);
