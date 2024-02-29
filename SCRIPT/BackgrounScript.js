@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.cookie.indexOf('cookies_accepted=true') === -1 && document.cookie.indexOf('cookies_accepted=false') === -1) {
         // If not, show the cookie popup
         cookiePopup.style.display = 'block';
-        Cookies = true;
+        
     }
 });
 
