@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     declineCookiesBtn.addEventListener('click', function () {
         // Hide the cookie popup when the "Decline Cookies" button is clicked
-        cookiePopup.style.display = 'none';
-        // Set a cookie to remember the user's choice to decline cookies
-        document.cookie = 'cookies_accepted=false; max-age=' + (365 * 24 * 60 * 60); // Expires in 1 year
+        cookiePopup.style.display = 'none';
         Cookies = false;
     });
 
