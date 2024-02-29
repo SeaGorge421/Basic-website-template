@@ -1,6 +1,6 @@
 var Cookies;
 document.addEventListener('DOMContentLoaded', function () {
-    var cookiePopup = document.getElementById('cookie-popup');
+    var cookiePopup = document.getElementById('cookie-consent-popup');
     var acceptCookiesBtn = document.getElementById('accept-cookies');
     var declineCookiesBtn = document.getElementById('decline-cookies');
 
