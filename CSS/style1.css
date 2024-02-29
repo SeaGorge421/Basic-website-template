@@ -260,44 +260,44 @@ input:checked + .slider:before {
             display: none;
           }
           
-          .cookie-consent-popup, #cookieSvg {
+          .cookie-consent-popup #cookieSvg {
             width: 50px;
           }
           
-        .cookie-consent-popup,  #cookieSvg g path {
+        .cookie-consent-popup  #cookieSvg g path {
             fill: rgb(97, 81, 81);
           }
           
-          .cookie-consent-popup, .cookieHeading {
+          .cookie-consent-popup .cookieHeading {
             font-size: 1.2em;
             font-weight: 800;
             color: rgb(26, 26, 26);
           }
           
-          .cookie-consent-popup, .cookieDescription {
+          .cookie-consent-popup .cookieDescription {
             text-align: center;
             font-size: 0.7em;
             font-weight: 600;
             color: rgb(99, 99, 99);
           }
           
-          .cookie-consent-popup, .cookieDescription a {
+          .cookie-consent-popup .cookieDescription a {
             --tw-text-opacity: 1;
             color: rgb(59 130 246);
           }
           
-          .cookie-consent-popup, .cookieDescription a:hover {
+          .cookie-consent-popup .cookieDescription a:hover {
             -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
           }
           
-          .cookie-consent-popup, .buttonContainer {
+          .cookie-consent-popup .buttonContainer {
             display: flex;
             gap: 20px;
             flex-direction: row;
           }
           
-          .cookie-consent-popup, .acceptButton {
+          .cookie-consent-popup .acceptButton {
             width: 80px;
             height: 30px;
             background-color: #7b57ff;
@@ -311,7 +311,7 @@ input:checked + .slider:before {
             transition: all .6s ease;
           }
           
-          .cookie-consent-popup, .declineButton {
+          .cookie-consent-popup .declineButton {
             width: 80px;
             height: 30px;
             background-color: #dadada;
@@ -325,13 +325,13 @@ input:checked + .slider:before {
             transition: all .6s ease;
           }
           
-          .cookie-consent-popup,  .declineButton:hover {
+          .cookie-consent-popup  .declineButton:hover {
             background-color: #ebebeb;
             box-shadow: 0 10px 15px -3px #bebdbd, 0 4px 6px -2px #bebdbd;
             transition-duration: .2s;
           }
           
-          .cookie-consent-popup, .acceptButton:hover {
+          .cookie-consent-popup .acceptButton:hover {
             background-color: #9173ff;
             box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
             transition-duration: .2s;
