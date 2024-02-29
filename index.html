@@ -75,21 +75,23 @@
     });
 </script>
 <script>
-  const darkModeToggle = document.getElementById('mode-toggle'); // Corrected ID
-const body = document.body;
+    // Retrieve the user's preference from localStorage
+    const storedMode = localStorage.getItem('mode');
+    if (storedMode) {
+        document.body.classList.add(storedMode); // Apply the stored mode
+        document.getElementById('mode-toggle').checked = storedMode === 'dark-mode'; // Update the toggle
+    }
 
-// Function to set initial mode based on checkbox state
-function setInitialMode() {
-    body.classList.toggle('dark-mode', darkModeToggle.checked);
-}
-
-// Call the function to set initial mode
-setInitialMode();
-
-// Listen for changes in checkbox state
-darkModeToggle.addEventListener('change', () => {
-    body.classList.toggle('dark-mode', darkModeToggle.checked);
-});
+    // Toggle mode when the checkbox is clicked
+    document.getElementById('mode-toggle').addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('dark-mode'); // Apply dark mode
+            localStorage.setItem('mode', 'dark-mode'); // Store the mode preference
+        } else {
+            document.body.classList.remove('dark-mode'); // Apply light mode
+            localStorage.setItem('mode', ''); // Remove mode preference from storage
+        }
+    });
 </script>
 </body>
 </html>
